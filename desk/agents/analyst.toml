@@ -1,3 +1,4 @@
+# Modified in the independent deskd-spike fork; see MODIFICATIONS.md for provenance and limits.
 name = "analyst"
 description = "Research seat: market/sector/company research, factor validation, dossiers. Proposes and vetoes; never executes."
 model = "gpt-5.6-terra"

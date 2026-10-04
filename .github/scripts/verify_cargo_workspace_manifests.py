@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Modified in the independent deskd-spike fork; see MODIFICATIONS.md for provenance and limits.
 
 """Verify that codex-rs Cargo manifests follow workspace manifest policy.
 

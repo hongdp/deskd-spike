@@ -1,3 +1,4 @@
+// Modified in the independent deskd-spike fork; see MODIFICATIONS.md for provenance and limits.
 //! Loopback HTTP surface.
 //!
 //! The provider's base_url is `http://127.0.0.1:<port>/backend-api/codex`, so

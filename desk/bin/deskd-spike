@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Copyright 2026 deskd-spike contributors. SPDX-License-Identifier: Apache-2.0
+# A retirement notice, not a runtime launcher. Deliberately reads no configuration.
+set -euo pipefail
+
+if [[ $# -eq 1 && ( $1 == --help || $1 == -h ) ]]; then
+  printf '%s\n' \
+    'deskd-spike is a retired, independent architecture experiment.' \
+    'No run or login command is supported; the legacy provider proxy is not started.' \
+    'See README.md, desk/README.md and MODIFICATIONS.md for migration boundaries.'
+  exit 0
+fi
+if [[ $# -eq 1 && $1 == --version ]]; then
+  printf '%s\n' 'deskd-spike (retired source experiment; no runtime release)'
+  exit 0
+fi
+
+printf '%s\n' \
+  'deskd-spike does not launch a harness or login flow.' \
+  'The legacy desk and provider proxy are retired. Run with --help for details.' >&2
+exit 64

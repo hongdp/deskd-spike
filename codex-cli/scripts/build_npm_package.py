@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Stage and optionally package the @openai/codex npm module."""
+# Modified by deskd-spike contributors, 2026-10-03; see MODIFICATIONS.md.
 
 import argparse
 import json
@@ -134,8 +135,19 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
+def require_distribution_enabled() -> None:
+    """Honor this retired fork's private manifest before any staging or downloads."""
+    manifest = json.loads((CODEX_CLI_ROOT / "package.json").read_text(encoding="utf-8"))
+    if manifest.get("private") is True:
+        raise SystemExit(
+            "deskd-spike distribution is retired; npm packaging is disabled. "
+            "See MODIFICATIONS.md."
+        )
+
+
 def main() -> int:
     args = parse_args()
+    require_distribution_enabled()
 
     package = args.package
     version = args.version
@@ -230,6 +242,7 @@ def prepare_staging_dir(staging_dir: Path | None) -> tuple[Path, bool]:
 
 
 def stage_sources(staging_dir: Path, version: str, package: str) -> None:
+    require_distribution_enabled()
     package_json: dict
     package_json_path: Path | None = None
 

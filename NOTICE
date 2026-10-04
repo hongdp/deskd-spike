@@ -4,3 +4,10 @@ Copyright 2025 OpenAI
 This project includes code derived from [Ratatui](https://github.com/ratatui/ratatui), licensed under the MIT license.
 Copyright (c) 2016-2022 Florian Dehau
 Copyright (c) 2023-2025 The Ratatui Developers
+
+deskd-spike modifications
+Copyright 2026 deskd-spike contributors
+
+This repository is an independently modified fork of OpenAI Codex, not an
+official OpenAI distribution. The upstream notices above are retained for
+attribution. See MODIFICATIONS.md for the fork's changes and distribution limits.

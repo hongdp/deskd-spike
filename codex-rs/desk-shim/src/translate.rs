@@ -1,3 +1,4 @@
+// Modified in the independent deskd-spike fork; see MODIFICATIONS.md for provenance and limits.
 //! Pure translation between the Responses API and Gemini `generateContent`.
 //!
 //! Request side: `build_gemini_request` turns a Responses request (JSON) into a

@@ -1,81 +1,66 @@
-<p align="center"><strong>Codex CLI</strong> is a coding agent from OpenAI that runs locally on your computer.
-<p align="center">
-  <img src="https://github.com/openai/codex/blob/main/.github/codex-cli-splash.png" alt="Codex CLI splash" width="80%" />
-</p>
-</br>
-If you want Codex in your code editor (VS Code, Cursor, Windsurf), <a href="https://developers.openai.com/codex/ide">install in your IDE.</a>
-</br>If you want the desktop app experience, run <code>codex app</code> or visit <a href="https://chatgpt.com/codex?app-landing-page=true">the Codex App page</a>.
-</br>If you are looking for the <em>cloud-based agent</em> from OpenAI, <strong>Codex Web</strong>, go to <a href="https://chatgpt.com/codex">chatgpt.com/codex</a>.</p>
+# deskd-spike
 
----
+An independent, retired architecture experiment for **deskd**: a self-hosted
+workspace with distinct agent seats and an auditable authorization ledger.
+This repository is a modified fork of [OpenAI Codex](https://github.com/openai/codex).
+It is not an OpenAI product and is not endorsed or supported by OpenAI.
 
-## Quickstart
+The historical repository address and internal `codex-*` source identifiers
+remain for provenance. The project's public name is **deskd-spike**; changing
+documentation does not rename the hosted repository or an existing installation.
 
-### Installing and running Codex CLI
+## Status
 
-Run the following on Mac or Linux to install Codex CLI:
+This spike is source material for the next deskd architecture, **not a supported
+agent runtime or a trading system**. Its role cards and hooks do not establish
+independent security identities. The planned replacement uses an unmodified,
+separately installed Codex release, independent role roots, a credential gateway,
+and a persistent coordination ledger. That replacement is not implemented here.
 
-```shell
-curl -fsSL https://chatgpt.com/codex/install.sh | sh
-```
+The old launcher is retired. `desk/bin/deskd-spike --help` explains the migration;
+it does not start a model, load a desk home, or start the legacy provider proxy.
+`desk/bin/codex-desk` is a retired compatibility entry point that refuses execution.
+There is no supported run or login command in this repository.
 
-Run the following on Windows to install Codex CLI:
+Do not use the historical desk configuration with personal credentials, broker
+accounts, or a production workspace. No real-money trading is supported. Future
+examples start with a local paper ledger; external paper adapters require their
+own authorization and isolation review.
 
-```shell
-powershell -ExecutionPolicy ByPass -c "irm https://chatgpt.com/codex/install.ps1 | iex"
-```
+## Authentication and distribution
 
-The standalone installers download from `https://releases.openai.com/codex` by default and fall back to GitHub Releases if a metadata or asset download is unavailable. To force GitHub Releases, set `CODEX_INSTALLER_USE_RELEASES_OPENAI_COM` to `false` (`0` and `no` are also accepted):
+The replacement's default is a user-supplied API key. Optional subscription
+authentication must use a supported third-party application registration and
+public API route under the application's own identity. The old first-party login
+and ChatGPT backend proxy are not a supported deskd authentication path.
 
-```shell
-curl -fsSL https://chatgpt.com/codex/install.sh | CODEX_INSTALLER_USE_RELEASES_OPENAI_COM=false sh
-```
+This fork does not publish runnable binaries or packages. The inherited npm CLI,
+SDK and proxy packages are marked private, npm staging refuses this private
+checkout, and inherited publishing paths are restricted to the upstream
+repository. Historical Rust source still contains upstream UI,
+login, update and service integrations; a manual source build does **not** make
+those integrations supported for deskd. Do not distribute that build as an
+official Codex release or as a completed deskd runtime.
 
-```powershell
-$env:CODEX_INSTALLER_USE_RELEASES_OPENAI_COM='false'; irm https://chatgpt.com/codex/install.ps1 | iex
-```
+For the unmodified upstream product, use the
+[official Codex documentation](https://developers.openai.com/codex). Those
+instructions describe OpenAI's distribution, not this fork.
 
-Codex CLI can also be installed via the following package managers:
+## Repository guide
 
-```shell
-# Install using npm
-npm install -g @openai/codex
-```
+- [Historical desk material and migration boundaries](desk/README.md)
+- [Modification and distribution record](MODIFICATIONS.md)
+- [Security reporting and current limits](SECURITY.md)
+- [License](LICENSE) and [required notices](NOTICE)
 
-```shell
-# Install using Homebrew
-brew install --cask codex
-```
+The existing upstream source, tests and contributor guidance are retained for
+research and attribution. Retained upstream documentation is not a promise that
+this fork supports all upstream product features.
 
-Then simply run `codex` to get started.
+## License and attribution
 
-<details>
-<summary>You can also go to the <a href="https://github.com/openai/codex/releases/latest">latest GitHub Release</a> and download the appropriate binary for your platform.</summary>
-
-Each GitHub Release contains many executables, but in practice, you likely want one of these:
-
-- macOS
-  - Apple Silicon/arm64: `codex-aarch64-apple-darwin.tar.gz`
-  - x86_64 (older Mac hardware): `codex-x86_64-apple-darwin.tar.gz`
-- Linux
-  - x86_64: `codex-x86_64-unknown-linux-musl.tar.gz`
-  - arm64: `codex-aarch64-unknown-linux-musl.tar.gz`
-
-Each archive contains a single entry with the platform baked into the name (e.g., `codex-x86_64-unknown-linux-musl`), so you likely want to rename it to `codex` after extracting it.
-
-</details>
-
-### Using Codex with your ChatGPT plan
-
-Run `codex` and select **Sign in with ChatGPT**. We recommend signing into your ChatGPT account to use Codex as part of your Plus, Pro, Business, Edu, or Enterprise plan. [Learn more about what's included in your ChatGPT plan](https://help.openai.com/en/articles/11369540-codex-in-chatgpt).
-
-You can also use Codex with an API key, but this requires [additional setup](https://developers.openai.com/codex/auth#sign-in-with-an-api-key).
-
-## Docs
-
-- [**Codex Documentation**](https://developers.openai.com/codex)
-- [**Contributing**](./docs/contributing.md)
-- [**Installing & building**](./docs/install.md)
-- [**Open source fund**](./docs/open-source-fund.md)
-
-This repository is licensed under the [Apache-2.0 License](LICENSE).
+This fork remains under Apache-2.0; see [LICENSE](LICENSE). Preserve the original
+copyright and third-party notices when redistributing permitted source material.
+New files in this change are also Apache-2.0. This repository does not change the
+license of the separate deskd project. Product names used to identify upstream
+components do not imply affiliation or grant trademark rights.

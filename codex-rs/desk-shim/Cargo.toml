@@ -1,3 +1,4 @@
+# Modified in the independent deskd-spike fork; see MODIFICATIONS.md for provenance and limits.
 [package]
 name = "codex-desk-shim"
 version.workspace = true

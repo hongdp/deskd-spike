@@ -1,3 +1,4 @@
+// Modified in the independent deskd-spike fork; see MODIFICATIONS.md for provenance and limits.
 //! In-process wire adapter: OpenAI Responses API (what Codex speaks) -> Gemini.
 //!
 //! Codex has exactly one wire protocol, `/v1/responses` streamed as SSE. This

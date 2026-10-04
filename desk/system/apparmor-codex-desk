@@ -1,10 +1,10 @@
+# deskd-spike: retired source example with placeholder paths; do not deploy.
 # Ubuntu 24.04 restricts unprivileged user namespaces (apparmor_restrict_unprivileged_userns=1).
-# Codex's bubblewrap sandbox needs them. Install with:
-#   sudo install -m 0644 desk/system/apparmor-codex-desk /etc/apparmor.d/codex-desk
-#   sudo apparmor_parser -r /etc/apparmor.d/codex-desk
+# Historical namespace-policy experiment, not an approved deployment profile.
+# Do not install or load it; placeholder paths are intentionally non-operational.
 abi <abi/4.0>,
 include <tunables/global>
-profile codex-desk /home/hongdp/Workspace/codex-deskd/codex-rs/target/release/codex flags=(unconfined) {
+profile codex-desk /path/to/deskd-spike/codex-rs/target/release/codex flags=(unconfined) {
   userns,
   include if exists <local/codex-desk>
 }

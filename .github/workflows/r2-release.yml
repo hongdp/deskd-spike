@@ -20,6 +20,8 @@ permissions: {}
 
 jobs:
   publish:
+    # deskd-spike: never publish this independent fork to upstream infrastructure.
+    if: github.repository == 'openai/codex'
     runs-on: ubuntu-latest
     timeout-minutes: 60
     environment: codex-r2-publisher

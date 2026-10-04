@@ -1,3 +1,4 @@
+# Modified in the independent deskd-spike fork; see MODIFICATIONS.md for provenance and limits.
 name = "engineer"
 description = "Implementation seat: code, tests, tooling, runtime config. No trading, broker, or order surface."
 model = "gpt-5.5"

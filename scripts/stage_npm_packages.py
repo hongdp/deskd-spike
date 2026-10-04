@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Stage one or more Codex npm packages for release."""
+# Modified by deskd-spike contributors, 2026-10-03; see MODIFICATIONS.md.
 
 import argparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -496,6 +497,7 @@ def tarball_name_for_package(package: str, version: str) -> str:
 
 def main() -> int:
     args = parse_args()
+    _BUILD_MODULE.require_distribution_enabled()
 
     output_dir = args.output_dir or (REPO_ROOT / "dist" / "npm")
     output_dir.mkdir(parents=True, exist_ok=True)

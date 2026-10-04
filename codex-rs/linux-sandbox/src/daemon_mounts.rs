@@ -1,3 +1,4 @@
+// Modified in the independent deskd-spike fork; see MODIFICATIONS.md for provenance and limits.
 //! Reject host mount aliases that would bypass the privileged socket directory mask.
 //! Mount roots describe filesystem identity; canonical paths alone miss bind mounts.
 
